@@ -1,0 +1,286 @@
+.footer
+	background-color: $bg-color-2
+
+	&-top		
+		padding: 60px 0 70px
+		&-block
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+
+	&-head
+		width: auto
+		flex-shrink: 0
+		margin-right: 110px
+
+	&__slogan
+		display: block
+		max-width: 205px
+		margin-top: 15px
+
+	&__socials
+		margin-top: 30px		
+	
+	&-contacts		
+		margin-top: 18px
+		.contact
+			margin-top: 20px
+		&-block
+			flex-shrink: 0
+			width: 270px	
+			margin-left: 110px
+
+	&__title
+		font-weight: normal
+		margin: 0
+		+bold
+		color: #fff
+		line-height: 1.2
+		display: block
+		margin-bottom: 20px
+		text-transform: uppercase
+	
+	&-menu-block
+		width: 100%
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between		
+		margin-left: auto
+		margin-right: auto
+
+	&-menu	
+		margin: 0 30px
+		&__list
+			li
+				margin-bottom: 12px
+				&:last-child
+					margin-bottom: 0
+				&.active
+					a
+						color: $accent-color	
+						text-decoration: underline			
+						text-decoration-color: $accent-color
+			a
+				color: $text-color
+				font-size: 16px
+				line-height: 1.2
+				display: inline-block			
+				text-decoration: none
+				text-decoration-color: transparent
+				transition: color .2s, text-decoration-color .2s				
+				&:hover
+					color: $accent-color	
+					text-decoration: underline			
+					text-decoration-color: $accent-color
+
+	&-bot		
+		border-top: 1px solid #000
+		padding: 30px 0 35px
+		&-block
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: space-between
+			align-items: center
+	
+.developer
+	flex-shrink: 0
+	width: 270px
+	margin-left: 100px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	&__title
+		margin-top: 20px
+		transition: color .2s
+	&__logo
+		width: 134px
+		img
+			width: 100%
+	&:hover
+		.developer__title
+			color: #fff
+
+@media only screen and (max-width : 1199px)	
+
+	.footer
+		&-head
+			margin-right: 40px
+		&-contacts-block
+			margin-left: 40px
+		&-menu
+			&-block
+				width: 100%
+
+@media only screen and (max-width : 991px)	
+
+	.footer			
+		&-top
+			&-block
+				flex-wrap: wrap	
+		&-head
+			margin-right: 0
+			width: auto
+			max-width: 50%
+		&-contacts-block
+			margin-left: 20px
+			width: auto
+			max-width: calc(50% - 20px)
+		&-menu
+			margin-left: 0px
+			margin-right: 0px
+			width: 50%
+			padding-right: 20px			
+			&__list
+				columns: 2
+			&-block
+				order: 1
+				margin: 50px 0 0
+				justify-content: center	
+		&-bot-block
+			justify-content: flex-start
+			align-items: flex-start
+			flex-direction: column
+		
+	.developer
+		width: auto	
+		margin: 0
+		margin-top: 40px
+		&__title
+			margin-top: 5px
+
+@media only screen and (max-width : 767px)	
+
+	.footer		
+		&-menu
+			margin-left: 50px
+			margin-right: 50px
+			width: 100%
+			padding-right: 0
+			&__list
+				columns: 1
+
+@media only screen and (max-width : 575px)
+
+	.footer
+		&__title
+			font-size: 14px
+			margin-bottom: 15px
+		&-head
+			width: 50%
+			padding-right: 30px
+		&__logo
+			width: 120px
+		&__slogan
+			max-width: 180px
+			font-size: 13px
+			margin-top: 10px
+		&__phones
+			a
+				font-size: 22px
+		&__socials
+			margin-top: 15px
+			.socials
+				&__link
+					width: 30px
+					height: 30px
+					margin-right: 5px
+					.svg
+						width: 16px
+						height: 16px
+		&-contacts
+			margin-top: 10px
+			&-block
+				width: 50%
+				max-width: 50%
+				margin-left: 0
+				.contact
+					font-size: 14px
+					margin-top: 10px
+					padding-left: 30px
+					line-height: 1.2
+					& > .svg
+						width: 20px
+						height: 20px
+		&-menu
+			width: 50%
+			margin-left: 0
+			margin-right: 0
+			&__list
+				li
+					margin-bottom: 5px
+				a
+					font-size: 14px
+			&:nth-child(1)
+				padding-right: 20px
+			&-block
+				justify-content: space-between	
+				margin-top: 40px	
+
+
+@media only screen and (max-width : 374px)
+
+	.footer
+		&-top			
+			&-block
+				flex-direction: column	
+				align-items: center
+		&-head
+			width: 100%
+			max-width: 100%
+			padding-right: 0px
+			text-align: center
+		&__logo
+			width: auto
+		&__slogan
+			max-width: 100%
+			font-size: 14px
+			margin-top: 0px
+		&__phones
+			a
+				font-size: 24px
+
+		&__socials
+			justify-content: center
+			.socials				
+				&__link
+					width: 40px
+					height: 40px
+					margin-right: 8px
+					.svg
+						width: auto
+						height: auto
+
+		&__phones
+			align-items: center
+			margin-top: 20px
+
+		&-contacts
+			margin-top: 20px
+			width: 100%
+			text-align: left
+			&-block
+				width: 100%
+				max-width: 100%
+				text-align: center
+				margin-top: 40px
+				.contact
+					text-align: left
+					margin-top: 15px
+					padding-left: 40px
+					& > .svg
+						width: auto						
+						height: auto
+						top: -4px

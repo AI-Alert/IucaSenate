@@ -1,0 +1,1 @@
+<button class="up"><img src="<?= _mt_assets(); ?>/img/up-button.svg" alt="Alt" class="svg"></button>

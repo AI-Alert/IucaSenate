@@ -1,0 +1,164 @@
+.fancybox-is-open .fancybox-bg
+	background-color: #040406
+	opacity: .95
+
+.fancybox-slide>*
+	margin: 15px 0	
+
+.popup		
+	background-color: $bg-color
+	position: relative		
+	padding: 35px 45px 40px
+	overflow: hidden	
+	border: none	
+	width: 930px			
+	text-align: center
+	&__close
+		position: absolute
+		display: inline-block		
+		background-color: transparent
+		box-shadow: none
+		border: none
+		right: 18px
+		top: 17px
+		cursor: pointer
+		padding: 0
+		height: 16px
+		width: 16px
+		.svg
+			width: 16px
+			height: 16px
+			path
+				transition: fill .2s 
+		&:hover
+			.svg
+				path
+					fill: $accent-color		
+	&__title
+		font-size: 30px
+		line-height: 1
+		+bold
+		color: #fff
+	&__subtitle		
+		margin-top: 15px
+	.fancybox-close-small	
+		display: none			
+	.form
+		width: 100%		
+		margin-top: 30px
+		.form-inputs
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: center		
+			margin-left: -7.5px
+			margin-right: -7.5px
+			.input-wrapper
+				width: calc(33.33% - 15px)
+				margin: 0 7.5px 15px
+		input[type=submit]
+			width: 210px
+		.form-foot
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			width: 100%
+			justify-content: space-between
+			margin-top: 20px
+			.file-upload
+				margin-right: 15px
+				margin-left: auto
+
+	&--is-thanks
+		background-image: url('../img/thanks-icon.svg')
+		background-repeat: no-repeat
+		background-size: 114px 109px
+		background-position: top 45px center
+		width: 370px!important
+		padding-top: 195px!important
+		.popup
+			&__subtitle
+				margin-top: 10px
+
+@media only screen and (max-width : 991px)
+
+	.popup
+		width: 100%
+		max-width: 95%
+		padding: 45px 30px 35px
+		.form
+			.form-block
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: flex-start
+				justify-content: space-between
+			.form-inputs
+				flex-direction: column
+				margin-left: 0
+				margin-right: 15px
+				margin-bottom: -15px
+				width: calc(50% - 15px)
+				flex-shrink: 0
+				.input-wrapper
+					width: 100%
+					margin-left: 0
+					margin-right: 0
+					margin-bottom: 15px
+			textarea
+				height: 180px
+			.custom-checkbox
+				width: 100%
+				max-width: 100%
+				margin-bottom: 30px
+			.form-foot
+				flex-wrap: wrap
+				.file-upload
+					margin-left: auto
+
+@media only screen and (max-width : 575px)
+
+	.popup
+		.form
+			margin-top: 20px
+			.form-block
+				flex-direction: column
+			.form-inputs
+				flex-direction: column				
+				margin-right: 0
+				width: 100%
+				margin-bottom: 0			
+			.custom-checkbox				
+				margin-bottom: 20px
+			.form-foot
+				flex-direction: column
+				margin-top: 10px	
+				.file-upload
+					margin-right: auto
+					margin-left: auto	
+				.submit-wrapper					
+					margin-top: 15px
+					margin-left: auto
+					margin-right: auto
+
+@media only screen and (max-width : 399px)
+
+	.popup
+		.form			
+			.form-foot								
+				.submit-wrapper					
+					width: 100%
+					input[type=submit]
+						width: 100%
+				.file-upload
+					width: 100%
+					&__btn
+						width: 100%

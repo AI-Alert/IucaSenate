@@ -1,0 +1,73 @@
+.decision
+	padding: 0
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		position: relative
+		display: flex
+		position: relative
+	&__video
+		width: 570px
+		flex-shrink: 0
+		margin-right: 50px
+		position: relative
+		.about
+			&__multimedia		
+				position: absolute
+				height: auto
+				width: 100%
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+	&__info
+		padding: 60px 0 80px
+	&__text
+		margin-top: 35px
+		p
+			&:nth-child(1)
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+
+@media only screen and (max-width : 1199px)	
+
+	.decision
+		&__video
+			width: 50%
+			margin-right: 30px
+
+@media only screen and (max-width : 991px)	
+
+	.decision
+		padding: 80px 0 
+		&__info
+			padding: 0
+		&__video
+			float: left
+			margin: 0 30px 20px 0
+			.about
+				&__multimedia	
+					position: relative	
+					height: 0
+					padding-bottom: 75%
+
+@media only screen and (max-width : 767px)	
+
+	.decision
+		&__info
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			position: relative
+			display: flex
+			flex-direction: column
+		&__video	
+			width: 100%
+			order: 1
+			float: none
+			margin: 0
+			margin-top: 30px

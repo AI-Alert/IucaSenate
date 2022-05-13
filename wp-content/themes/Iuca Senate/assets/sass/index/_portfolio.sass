@@ -1,0 +1,403 @@
+.portfolio	
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex	
+	flex-direction: column	
+	align-items: flex-start
+	justify-content: flex-start
+	min-height: 643px
+	padding-left: 50%	
+	position: relative
+	&-col
+		margin-top: 30px
+	& + .portfolio
+		margin-top: 80px
+	&__foto
+		position: absolute
+		top: 0
+		left: 0
+		right: 50%
+		bottom: 0
+		img	
+			@extend .object-fit
+		.slick-list,
+		.slick-track
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+	&__info
+		display: inline-block		
+		margin-bottom: 70px
+		width: 585px
+		padding-left: 85px		
+	&__title
+		font-weight: normal
+		margin: 0
+		color: #fff
+		+bold
+		font-size: 30px
+		line-height: 1.33
+		margin-top: -5px
+
+	&__chars
+		width: 100%
+		margin-top: 20px
+		table
+			border-collapse: collapse
+			max-width: 100%
+			td
+				vertical-align: top
+				line-height: 1.33
+				padding: 7px 0
+				&:nth-child(1)
+					color: #fff
+					padding-right: 25px
+
+	&__small
+		background-color: #1C1D24
+		display: inline-block
+		white-space: nowrap
+		margin-top: 15px
+		padding: 7px 10px
+		line-height: 1
+
+	.btn
+		height: 45px
+		line-height: 45px
+		margin-top: 30px
+		width: 150px
+	
+	&-review
+		margin-top: auto
+		width: 670px
+		background-color: #fff
+		margin-left: -85px
+		position: relative
+		z-index: 2
+		padding: 30px 25px 30px 85px
+		&__text
+			color: $bg-color
+			blockquote
+				padding: 0
+				margin: 0
+				background-color: transparent
+				border: none
+				background-size: 32px
+				background-position: top 3px left 	
+				padding-left: 53px
+				margin-left: -53px	
+		&__foot
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex			
+			display: flex
+			width: 100%
+			align-items: center
+			margin-top: 20px
+			& > img
+				display: inline-block
+				width: 50px
+				height: 50px
+				border-radius: 50%
+				overflow: hidden
+				line-height: 1
+				object-fit: cover
+				margin-right: 15px
+				flex-shrink: 0
+		&__name
+			font-size: 16px
+			color: $bg-color
+			+bold
+
+	&__slider-arrows
+		align-items: center	
+		justify-content: space-between
+		position: absolute
+		z-index: 3
+		height: 50px
+		width: 100px
+		bottom: 0
+		left: 50%
+		margin-left: -135px
+		display: none
+		&.is-visible
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+
+		.back,
+		.next	
+			user-select: none		
+			cursor: pointer		
+			padding: 0		
+			display: inline-block		
+			position: absolute	
+			width: 50px
+			height: 50px
+			border: none
+			background-color: $bg-color-2
+			transition: background-color .2s
+			.svg
+				width: 15px
+				height: 15px	
+				@extend .absolute-center
+				path
+					transition: fill .2s
+			&:not(.slick-disabled):hover
+				background-color: $text-color
+				.svg
+					path
+						fill: #fff			
+				
+		.back
+			left: 0	
+			.svg
+				transform: scale(-1,-1)	translate(50%, 50%)
+
+		.next
+			right: 0px
+			background-color: #1C1D24	
+
+	&:nth-child(2n)
+		padding-left: 0
+		padding-right: 50%
+		.portfolio
+			&__foto
+				left: 50%
+				right: 0
+			&__info
+				margin-right: 85px	
+				margin-left: auto
+			&-review
+				margin-left: auto
+				margin-right: -85px
+			&__slider-arrows
+				margin-left: 35px
+
+.works
+	padding: 0
+	& > .container
+		position: relative
+	.section-title
+		position: absolute
+		left: 50%
+		margin-left: 85px
+		z-index: 2
+		top: 120px
+	.portfolio	
+		background-color: $bg-color-2		
+		overflow: hidden		
+		&__slider-arrows
+			right: 0
+			left: auto
+			position: absolute
+			top: 0
+			.back
+				background-color: $bg-color
+		.btn
+			margin-top: 45px
+		&__info
+			margin-bottom: 0
+			padding-top: 200px
+			padding-bottom: 80px
+		&__chars
+			margin-top: 40px
+		&-review			
+			position: absolute
+			bottom: 0
+			right: 50%
+			left: auto
+			width: 540px
+
+@media only screen and (max-width : 1199px)	
+
+	.portfolio
+		min-height: auto
+		&__info
+			margin-bottom: 50px
+			width: 480px
+			padding-left: 40px		
+		&-review
+			width: 565px
+		&:nth-child(2n)
+			.portfolio				
+				&__info
+					padding-right: 40px
+					margin-right: 0
+					padding-left: 0
+
+	.works
+		.section-title
+			margin-left: 40px
+			top: 70px
+		.portfolio	
+			&__info
+				padding-top: 150px
+				padding-bottom: 50px
+			.btn
+				margin-top: 30px
+			&-review		
+				position: relative
+				margin-top: auto		
+				margin-left: -80px	
+				left: auto
+				right: auto
+				width: 560px
+
+@media only screen and (max-width : 991px)		
+
+	.portfolio
+		padding: 0
+		margin: 0
+		flex-direction: row
+		flex-wrap: wrap
+		max-width: 720px
+		margin-left: auto
+		margin-right: auto
+		&__slider-arrows			
+			right: 0
+			left: auto
+		&__foto
+			position: relative
+			height: 0
+			padding-bottom: 67%
+			width: 100%
+			order: 1
+		&__info
+			padding: 0
+			margin: 0
+			width: 100%
+			max-width: 50%
+			padding-right: 20px
+			padding-bottom: 30px
+		&__title
+			margin-top: 0
+		&-review
+			margin: 0
+			width: 100%
+			max-width: 50%
+			position: absolute
+			right: 0
+			top: 0
+			min-height: 370px
+		&:nth-child(2n)
+			padding: 0	
+			.portfolio
+				&__info
+					padding: 0
+					margin: 0
+					width: 100%
+					max-width: 50%
+					padding-bottom: 30px
+				&__foto
+					left: auto
+				&-review
+					margin: 0
+					width: 100%
+					max-width: 50%
+
+	.works
+		background-color: $bg-color-2
+		padding: 80px 0
+		.section-title
+			position: relative
+			top: auto
+			margin-left: 0
+			left: auto
+		.portfolio	
+			&__slider-arrows
+				top: auto
+				bottom: -80px
+			&__slider
+				margin-top: 30px
+				padding-top: 30px	
+			&__chars
+				margin-top: 0
+			&__info
+				padding-top: 0
+				padding-bottom: 30px
+				padding-right: 20px
+			.btn
+				margin-top: 30px
+			&-review		
+				margin: 0
+				margin-left: 0
+				left: auto
+				right: 0
+				top: 0
+				bottom: auto
+				min-height: 350px
+				position: absolute			
+				height: auto
+
+@media only screen and (max-width : 767px)		
+
+	.portfolio
+		max-width: 540px
+
+@media only screen and (max-width : 575px)	
+
+	.portfolio
+		max-width: 100%
+		padding-left: 20px
+		padding-right: 20px
+		.btn
+			margin-top: 20px
+		&__slider-arrows			
+			right: 20px
+			bottom: auto
+			top: 0
+		&__info		
+			max-width: 100%
+			margin-top: 30px
+		&__foto
+			order: -1
+		&__title
+			font-size: 24px
+		&-review
+			padding: 20px 20px 20px 75px
+			max-width: 100%			
+			position: relative
+			min-height: auto
+		&:nth-child(2n)
+			max-width: 100%
+			padding-left: 20px
+			padding-right: 20px
+			.portfolio
+				&__info					
+					max-width: 100%
+					margin-top: 30px
+				&-review
+					padding: 20px 20px 20px 75px
+					max-width: 100%		
+
+	.works		
+		.section-title
+			padding-right: 100px
+		.portfolio	
+			height: auto!important
+			&__slider
+				padding-top: 0
+			&__slider-arrows				
+				bottom: 5px
+				right: 20px
+			&__info
+				padding-bottom: 0
+				padding-right: 0
+				margin-top: 20px
+			.btn
+				margin-top: 20px
+			&-review		
+				position: relative
+				padding: 20px 20px 20px 75px
+				max-width: 100%				
+				margin-top: 30px
+				min-height: auto
+				order: 1

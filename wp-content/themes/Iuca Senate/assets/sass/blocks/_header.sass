@@ -1,0 +1,385 @@
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 20		
+	box-shadow: none
+	transition: box-shadow .2s
+	background-color: $bg-color-2
+	&.is-fixed
+		box-shadow: 0px 20px 100px #000000		
+
+.navbar	
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between		
+		height: 90px
+		width: 100% 
+	&__slogan
+		margin-left: 34px	
+		max-width: 400px
+		line-height: 1
+	&__phones
+		margin-left: auto
+		a
+			color: $white
+	&__phone
+		&_mobile
+			display: none		
+	&__btn
+		margin-left: 30px		
+	&__logo
+		flex-shrink: 0
+	&__socials
+		display: none
+
+.hamburger	
+	cursor: pointer
+	padding: 0
+	z-index: 9
+	width: 25px
+	height: 18px
+	background-color: transparent	
+	flex-shrink: 0
+	user-select: none
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: 0
+	margin-left: 40px
+	&:hover
+		opacity: 1		
+		.hamburger-inner,
+		.hamburger-inner::after,
+		.hamburger-inner::before			
+			background-color: $white
+	.hamburger-box
+		width: 100%
+		height: 100%
+	.hamburger-inner,
+	.hamburger-inner::after,
+	.hamburger-inner::before		
+		height: 2px
+		width: 100%
+		border-radius: 0
+		background-color: $white
+	.hamburger-inner::after
+		top: 8px	
+	.hamburger-inner::before
+		top: 16px	
+		width: 14px
+	&.is-active		
+		.hamburger-inner
+			top: -2px
+			&::after
+				top: 20px
+
+.menu		
+	&__drop-btn
+		display: none
+	&__back
+		display: none		
+	&__title
+		display: none
+	&-block
+		position: absolute
+		right: 0
+		left: calc(50% + 305px)			
+		top: 90px
+		bottom: 0
+		height: calc(100vh - 90px)
+		background-color: #1C1D24			
+		padding-top: 32px	
+		padding-bottom: 30px
+		opacity: 0
+		visibility: hidden
+		transition: opacity .2s, visibility .2s
+		overflow: hidden
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch		
+		scrollbar-width: none		
+		&::-webkit-scrollbar
+			width: 0			
+		&.is-visible
+			opacity: 1
+			visibility: visible
+	&__list
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column		
+	&__item
+		width: 100%	
+		line-height: 1
+		transition: background-color .2s 		
+		&.active
+			.menu__link
+				color: $accent-color
+		&--sub									
+			.menu__link
+				position: relative
+				&:after
+					display: inline-block
+					width: 12px
+					height: 8px
+					content: ''
+					position: absolute
+					top: 50%
+					right: 0px
+					background-image: url('../img/drop-down.svg')
+					background-repeat: no-repeat
+					background-size: contain
+					background-position: center
+					transition: transform .2s
+					transform: translateY(-50%) rotate(180deg)
+	&__link		
+		color: $white
+		font-size: 20px			
+		display: block		
+		transition: color .2s
+		padding: 12px 0
+		+regular
+		position: relative			
+		line-height: 1
+		&.active			
+			color: $accent-color
+			&:after
+				background-image: url('../img/drop-down-hover.svg')				
+
+.submenu	
+	margin-left: 30px
+	margin-top: 5px
+	padding-bottom: 15px	
+	width: calc(280px - 75px)	
+	&__link		
+		font-size: 16px	
+		color: $text-color
+		+regular
+		display: inline-block
+		transition: color .2s
+		line-height: 1
+		padding: 10px 0px
+		transition: color .2s			
+	&__item
+		&.active
+			.submenu__link
+				color: $accent-color
+		& > ul
+			margin-top: 10px
+			padding-bottom: 10px
+			margin-left: 20px
+			& > li
+				&.active
+					a
+						color: $accent-color
+				& > a
+					transition: color .2s
+					padding: 10px 0
+					display: inline-block
+					+light
+					&:hover
+						color: $accent-color
+
+@media only screen and (min-width : 1024px)	
+
+	.header	
+		&.open-popup
+			right: 17px		
+	
+		&.is-fixed
+			.navbar__phone
+				cursor: pointer
+				.phone
+					&__tels
+						&_drop-down
+							&:hover
+								& + .phone__more-tels
+									opacity: 1
+									visibility: visible	
+					&__more-tels
+						&:hover
+							opacity: 1
+							visibility: visible		
+
+@media only screen and (min-width : 992px)			
+
+	.menu
+		&__link
+			width: auto
+			display: inline-block			
+			&:hover
+				color: $accent-color
+				&:after
+					background-image: url('../img/drop-down-hover.svg')			
+		&__item
+			padding-left: 45px
+			position: relative
+			user-select: none
+			&--sub
+				.menu__link
+					&:after
+						display: none
+			&.is-drop
+				background-color: $bg-color-2
+				.menu__link
+					color: $accent-color
+				.menu__drop-btn
+					top: 21px
+					.svg
+						transform: scale(-1,1)
+						path
+							fill: $accent-color				
+
+		&__drop-btn
+			display: inline-block			
+			left: 265px
+			top: 15px
+			cursor: pointer			
+			position: absolute
+			.svg
+				width: 16px
+				height: 12px
+				transform: rotate(180deg)
+				transition: transform .2s
+				path
+					transition: fill .2s
+			&:hover
+				.svg
+					path
+						fill: $accent-color	
+
+	.submenu
+		display: none		
+		&__link
+			&:hover
+				color: $accent-color	
+
+	.menu
+		&__list
+			&--foot
+				margin-top: 28px
+				.menu__item
+					&.active
+						.menu__link
+							color: $accent-color
+				.menu__link
+					color: $text-color
+					font-size: 16px
+					padding: 10px 0
+					&:hover
+						color: $accent-color
+
+@media only screen and (max-width : 1279px)		
+
+	.navbar
+		&__socials
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			margin-left: 45px
+			margin-top: 40px
+
+@media only screen and (max-width : 1199px)				
+
+	.navbar	
+		&__slogan
+			max-width: 200px	
+
+	.hamburger
+		margin-left: 30px
+
+	.menu		
+		&-block
+			left: calc(50% + 195px)		
+
+@media only screen and (max-width : 991px)	
+
+	.hamburger
+		margin-left: 30px
+
+	.navbar		
+		&-block
+			height: 70px		
+		&__slogan
+			max-width: 180px
+			font-size: 14px
+			margin-left: 20px
+		&__btn
+			height: 40px
+			margin-left: auto
+		&__phones
+			display: none
+		&__phone
+			&_mobile
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: center
+				justify-content: center
+				flex-shrink: 0
+				user-select: none		
+				background-color: transparent	
+				margin-left: 30px
+				.svg
+					width: 22px
+					height: 22px
+
+@media only screen and (max-width : 767px)	
+
+	.hamburger
+		margin-left: 30px	
+
+	.navbar		
+		&__btn
+			margin-left: auto
+		&__slogan
+			display: none
+		&__phone
+			&_mobile
+				margin-left: 30px
+
+@media only screen and (max-width : 575px)	
+
+	.hamburger
+		margin-left: 20px
+
+	.navbar
+		&__btn
+			height: 40px
+		&__phone
+			&_mobile
+				margin-left: 20px
+
+@media only screen and (max-width : 479px)	
+
+	.navbar	
+		&__btn
+			margin-left: 15px
+			margin-right: 15px
+		&__phone
+			&_mobile
+				margin-left: auto
+		&__logo
+			width: 130px
+
+@media only screen and (max-width : 374px)	
+
+	.navbar	
+		&__btn
+			display: none	

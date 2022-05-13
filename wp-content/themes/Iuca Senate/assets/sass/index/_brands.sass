@@ -1,0 +1,210 @@
+.brands
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		margin-left: -15px
+		margin-right: -15px
+		margin-bottom: -30px
+		flex-wrap: wrap
+		justify-content: flex-start
+		margin-top: 45px
+
+.brand
+	display: inline-block
+	width: 370px
+	height: 350px
+	margin: 0 15px 30px
+	padding-top: 300px
+	position: relative	
+	overflow: hidden
+	&__front
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		padding-top: 300px
+		transition: 1s transform
+		backface-visibility: hidden
+		background-color: #1C1D24
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25)	
+	&__photo
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 300px
+		img
+			@extend .object-fit		
+	&__title
+		height: 50px
+		line-height: 1
+		text-transform: uppercase
+		+bold
+		color: #fff
+		display: block
+		overflow: hidden
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		width: 100%
+		padding: 0 75px 0 25px
+	&__link
+		position: absolute
+		display: inline-block
+		width: 50px
+		height: 50px
+		right: 0
+		bottom: 0
+		background-color: #0F1015
+		z-index: 2
+		transition: background-color .2s 
+		.svg
+			@extend .absolute-center
+			width: 15px
+			height: 15px
+			path
+				transition: fill .2s
+	&__back
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #1C1D24
+		padding: 30px 25px 60px
+		overflow: hidden
+		border: 1px solid #000
+		transform: rotateY(180deg)
+		backface-visibility: hidden
+		transition: 1s transform
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25)
+		.brand
+			&__link
+				background-color: $accent-color
+				.svg
+					path
+						fill: #fff
+	&__logo
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		height: 43px
+		width: 100%	
+		& > img
+			max-width: 100%
+			max-height: 100%	
+	&__text
+		display: block
+		margin-top: 17px
+
+@media only screen and (min-width : 992px)
+
+	.brand
+		&:hover
+			.brand
+				&__front
+					transform: rotateY(180deg)
+				&__back
+					transform: rotateY(360deg)			
+
+@media only screen and (max-width : 1199px)	
+
+	.brand
+		width: calc(50% - 30px)
+		padding-top: 370px
+		height: 420px
+		&__front
+			padding-top: 370px
+		&__photo
+			height: 370px
+
+@media only screen and (max-width : 991px)	
+
+	.brands
+		&-block
+			margin-left: -10px
+			margin-right: -10px
+			margin-bottom: -20px
+
+	.brand
+		padding-top: 280px
+		width: calc(50% - 20px)
+		height: 330px
+		margin-left: 10px
+		margin-right: 10px
+		margin-bottom: 20px
+		&__front
+			padding-top: 280px
+		&__photo
+			height: 280px
+		&:hover
+			.brand
+				&__link
+					background-color: $accent-color
+					.svg
+						path
+							fill: #fff
+
+@media only screen and (max-width : 767px)	
+
+	.brand
+		padding-top: 190px
+		height: 240px
+		&__front
+			padding-top: 190px
+		&__photo
+			height: 190px
+
+@media only screen and (max-width : 575px)	
+
+	.brand
+		padding-top: 150px
+		height: 200px
+		&__front
+			padding-top: 150px
+		&__photo
+			height: 150px
+
+@media only screen and (max-width : 479px)	
+
+	.brands
+		&-block
+			margin-left: 0px
+			margin-right: 0px
+			margin-bottom: 0
+
+	.brand
+		padding-top: 270px
+		height: 320px
+		width: 100%
+		margin-left: 0
+		margin-right: 0
+		margin-bottom: 30px
+		&:last-child
+			margin-bottom: 0
+		&__front
+			padding-top: 270px
+		&__photo
+			height: 270px
+
+@media only screen and (max-width : 374px)	
+
+	.brand
+		padding-top: 215px
+		height: 265px	
+		&__front
+			padding-top: 215px
+		&__photo
+			height: 215px

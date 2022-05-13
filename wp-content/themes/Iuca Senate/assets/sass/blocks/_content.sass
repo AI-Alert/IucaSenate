@@ -1,0 +1,314 @@
+.content
+	padding-bottom: 80px
+	&__images
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		margin-left: -15px
+		margin-right: -15px
+		margin-top: 50px
+		margin-bottom: 60px
+		clear: both	
+		a
+			width: 100%
+			height: 0
+			padding-bottom: 18%		
+			margin: 0 15px
+			position: relative
+			display: inline-block
+			overflow: hidden
+			img
+				@extend .object-fit
+	&__btn
+		margin: 35px 0 60px
+
+.format-text
+
+	.alignright
+		float: right
+		margin-left: 30px
+		margin-bottom: 10px
+		max-width: 50%
+
+	.alignleft
+		float: left
+		margin-right: 30px
+		margin-bottom: 10px
+		max-width: 50%
+
+	.aligncenter
+		display: block
+		margin: 0 auto 10px	
+
+	a.aligncenter
+		display: block!important
+		margin-left: auto
+		margin-right: auto
+		text-align: center
+		max-width: 570px!important
+
+	p			
+		margin: 22px 0	
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		font-weight: normal
+		margin: 45px 0 0
+		line-height: 1.1	
+		clear: both
+		color: $white
+		& + p
+			margin-top: 18px
+	h1
+		font-size: 40px
+		+bold		
+		margin-top: 0
+		& + p
+			margin-top: 33px
+	h2
+		font-size: 30px
+		+bold
+	h3
+		font-size: 24px
+		+regular 
+	h4
+		font-size: 20px 
+		+regular
+	h5
+		font-size: 18px
+		+regular
+	h6
+		font-size: 16px
+		+bold
+		text-transform: uppercase
+
+	a:not(.btn)		
+		text-decoration: underline
+		text-decoration-color: $accent-color
+		transition: text-decoration-color .2s	
+		color: $accent-color
+		&:hover					
+			text-decoration: none
+			text-decoration-color: transparent
+
+	b, strong
+		font-weight: normal
+		+bold
+
+	ul,
+	ol
+		margin: 20px 0 
+		text-align: left	
+		padding: 0 
+		li
+			position: relative			
+			padding-left: 20px				
+			margin-bottom: 12px					
+			&:last-child
+				margin-bottom: 0	
+
+	ul
+		li
+			&:before
+				position: absolute
+				display: inline-block
+				content: ''		
+				width: 6px
+				height: 6px
+				background-color: $accent-color				
+				left: 0
+				top: 7px
+			ol
+				li					
+					&:before						
+						width: 0
+						height: 0
+
+	ol
+		counter-reset: item		
+		> li			
+			padding-left: 28px
+			&:before
+				content: counter(item) "."
+				counter-increment: item						
+				color: $accent-color
+				position: absolute
+				left: 0
+				top: 0
+				+bold
+			ol
+				counter-reset: subitem	
+				li							
+					padding-left: 40px		
+					&:before
+						content: counter(item) "." counter(subitem) "."
+						counter-increment: subitem	
+
+	table		
+		width: 100%
+		max-width: 100%
+		margin: 45px auto	0
+		border-collapse: collapse		
+		thead
+			border: 1px solid #000
+			border-bottom: none
+		tbody
+			border: 1px solid #000
+			border-top: none
+			background-color: #1C1D24
+			tr			
+				&:nth-child(1)
+					td
+						border-top: none
+		th			
+			text-align: left
+			padding: 15px	20px 		
+			font-weight: normal					
+			line-height: 1.2		
+			+bold
+			color: #fff
+			background-color: $bg-color-2
+		td		
+			text-align: left
+			padding: 15px 20px 
+			vertical-align: middle
+			position: relative	
+			line-height: 1.2
+			white-space: nowrap
+			+regular
+			border: 1px solid #000
+		&.is-scroll								
+			display: block
+			position: relative
+			padding-top: 35px		
+			&:before
+				position: absolute
+				content: ''
+				display: inline-block
+				top: 0px
+				right: 10px
+				width: 25px
+				height: 25px
+				background: url('../img/right-left.svg') 0 0 no-repeat
+				background-size: contain
+				z-index: 2				
+
+	@keyframes moveArrows
+		0% 
+			transform: translateX(0px)
+		50% 
+			transform: translateX(10px)
+		100% 
+			transform: translateX(0px)
+
+	blockquote
+		background-color: $bg-color-2
+		margin: 45px 0 0
+		position: relative
+		padding: 30px 40px 28px 134px
+		background-image: url('../img/quotes.svg')
+		background-repeat: no-repeat
+		background-position: top 37px left 37px
+		background-size: 64px 48px			
+		border: 1px solid #000
+
+@media only screen and (max-width : 1199px)		
+
+	.content			
+		&__images		
+			margin-left: -10px
+			margin-right: -10px
+			margin-bottom: 40px
+			a
+				margin-left: 10px
+				margin-right: 10px	
+
+@media only screen and (max-width : 1023px)	
+
+	.format-text
+		table
+			&.is-scroll			
+				overflow-x: scroll		
+				-webkit-overflow-scrolling: touch		
+				&:before				
+					background: url('../img/swipe.svg') 0 0 no-repeat
+					animation: moveArrows 1s infinite linear
+
+@media only screen and (max-width : 767px)		
+
+	.content	
+		&__images
+			flex-wrap: wrap		
+			margin-left: 0
+			margin-right: 0
+			a		
+				margin-left: 0
+				margin-right: 0
+				padding-bottom: 36%
+				width: calc(50% - 10px)
+				margin-bottom: 20px	
+
+	.format-text
+
+		.alignright,
+		.alignleft
+			max-width: 100%
+			width: 100%
+			float: none
+			margin-left: 0
+			margin-right: 0
+
+@media only screen and (max-width : 575px)		
+
+	.format-text	
+		
+		h1
+			font-size: 30px
+		h2
+			font-size: 24px			
+		h3
+			font-size: 20px
+		h4
+			font-size: 18px 
+		h5
+			font-size: 16px
+		h6
+			font-size: 14px
+
+		ul
+			li
+				&:before
+					top: 6px
+				ol
+					li
+						&:before
+							top: 0px
+
+		ol
+			> li			
+				padding-left: 20px
+				ol
+					li							
+						padding-left: 30px		
+
+		blockquote
+			padding: 90px 30px 30px 
+			background-position: top 30px left 30px
+			background-size: 50px auto
+
+@media only screen and (max-width : 374px)	
+
+	.content	
+		&__images
+			margin-bottom: 50px
+			a
+				margin-bottom: 10px	
+				width: calc(50% - 5px)

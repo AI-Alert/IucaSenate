@@ -1,0 +1,194 @@
+.news
+	&-section
+		padding-bottom: 80px
+	&-grid
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: flex-start		
+		flex-wrap: wrap
+		margin-top: 30px
+		margin-left: -15px
+		margin-right: -15px
+		margin-bottom: -30px
+
+.new
+	width: 270px
+	position: relative	
+	margin: 0 15px 30px
+	padding-top: 220px	
+	height: 376px
+	overflow: hidden
+	transition: padding-top .2s
+	background-color: $bg-color-2		
+	&__foot
+		padding: 20px 15px 33px	
+		position: relative
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		align-items: flex-start	
+		width: 100%
+		height: 100%
+		z-index: 2
+		background-color: $bg-color-2	
+	&:hover
+		.new		
+			&__more
+				background-color: $accent-color
+				.svg
+					path
+						fill: #fff
+	&__title			
+		font-size: 18px
+		font-weight: normal
+		margin: 0			
+		display: block		
+		line-height: 1.35
+		color: #fff
+		margin-bottom: 15px
+	&__text
+		opacity: 0
+		visibility: hidden	
+		position: absolute
+		margin-bottom: 20px
+		transition: opacity .2s, visibility .2s
+	&__foto
+		right: 0
+		height: 220px	
+		position: absolute
+		display: block	
+		top: 0
+		left: 0		
+		z-index: 2		
+		overflow: hidden
+		img
+			@extend .object-fit	
+	&__date
+		font-size: 16px
+		white-space: nowrap
+		line-height: 1
+		display: block
+		margin-top: auto
+	&__more
+		position: absolute
+		display: inline-block
+		width: 50px
+		height: 50px
+		right: 0
+		bottom: 0
+		background-color: $bg-color
+		z-index: 2
+		transition: background-color .2s 
+		.svg
+			@extend .absolute-center
+			width: 15px
+			height: 15px
+			path
+				transition: fill .2s
+	
+
+@media only screen and (min-width : 1200px)
+
+	.new
+		&:nth-child(1),
+		&:nth-child(6)
+			width: 570px
+			height: 510px
+			padding-top: 360px
+			.new
+				&__foto
+					height: 360px
+				&__title
+					font-size: 24px
+					line-height: 1.33
+				&__foot
+					padding: 25px 30px 20px
+				&__date
+					margin-bottom: 10px
+			&:hover
+				padding-top: 255px
+		&:nth-child(6)
+			margin-top: -134px
+
+@media only screen and (min-width : 992px)
+
+	.new
+		&:hover
+			padding-top: 0
+			.new		
+				&__text
+					opacity: 1
+					visibility: visible
+					position: relative
+
+@media only screen and (max-width : 1199px)	
+
+	.new
+		width: calc(33.33% - 30px)
+		padding-top: 245px
+		height: 400px
+		&__foto
+			height: 245px
+
+@media only screen and (max-width : 991px)	
+
+	.news
+		&-grid
+			margin-bottom: -20px
+			margin-left: -10px
+			margin-right: -10px
+
+	.new
+		width: calc(33.33% - 20px)
+		margin: 0 10px 20px
+		padding-top: 185px
+		height: auto
+		&__foto
+			height: 185px
+
+@media only screen and (max-width : 767px)	
+
+	.new
+		width: calc(50% - 20px)
+		padding-top: 210px
+		&__foto
+			height: 210px
+
+@media only screen and (max-width : 575px)
+
+	.new
+		padding-top: 170px
+		&__title
+			font-size: 16px
+		&__date
+			font-size: 14px	
+		&__foto
+			height: 170px
+
+@media only screen and (max-width : 479px)
+
+	.new
+		padding-top: 130px
+		&__foto
+			height: 130px
+
+@media only screen and (max-width : 374px)
+
+	.news
+		&-grid
+			margin-left: 0
+			margin-right: 0
+
+	.new
+		margin-left: 0
+		margin-right: 0
+		width: 100%
+		padding-top: 225px
+		&__foto
+			height: 225px

@@ -1,0 +1,1 @@
+<button class="up"><img src="<?= _assets(); ?>/img/next.svg" alt="Alt" class="svg"></button>

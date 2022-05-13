@@ -1,0 +1,121 @@
+.case-section
+	.min-cta
+		margin: 120px 0
+
+.case-hero
+	padding-bottom: 80px
+	.section-title
+		color: $accent-color
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex	
+		justify-content: space-between
+		align-items: flex-start
+		& > a
+			flex-shrink: 0
+			margin-left: 30px
+			width: 570px
+			height: 450px
+			display: inline-block
+			position: relative
+			img
+				@extend .object-fit
+	&__chars
+		margin-top: 30px
+	&__info
+		width: 100%		
+		table
+			border-collapse: collapse
+			max-width: 100%
+			td
+				vertical-align: top
+				padding: 6px 0
+				&:nth-child(1)
+					color: #fff
+					padding-right: 30px
+			.td__note
+				background-color: $bg-color-2
+				display: inline-block			
+				margin-top: 15px
+				padding: 8px 15px
+				line-height: 1
+	&__gallery
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex	
+		align-items: flex-start
+		justify-content: flex-start
+		flex-wrap: wrap
+		margin: 30px -15px -30px
+		& > a
+			display: inline-block
+			margin: 0 15px 30px
+			width: calc(25% - 30px)
+			height: 0px
+			position: relative
+			padding-bottom: 18.5%
+			img
+				@extend .object-fit
+
+@media only screen and (max-width : 1199px)	
+
+	.case-section
+		.min-cta
+			margin: 80px 0
+
+	.case-hero
+		.section-title
+			width: 100%
+			margin-bottom: 30px
+		&__chars
+			margin-top: 0
+		&-block
+			flex-wrap: wrap
+			& > a
+				width: calc(50% - 15px)
+				margin-left: 0
+				height: 360px
+				margin-top: 5px
+		&__info
+			width: calc(50% - 15px)
+
+@media only screen and (max-width : 991px)		
+
+	.case-hero
+		&-block
+			& > a
+				height: 270px
+		&__info
+			width: calc(50% - 15px)
+
+@media only screen and (max-width : 767px)	
+
+	.case-hero
+		&__info
+			width: 100%
+			order: 1
+		&-block
+			& > a
+				width: 100%
+				height: 0
+				padding-bottom: 80%
+				margin-top: 0
+				margin-bottom: 20px
+		&__gallery
+			margin: 30px -10px -20px
+			& > a
+				margin: 0 10px 20px
+				width: calc(25% - 20px)
+
+@media only screen and (max-width : 575px)	
+
+	.case-hero		
+		&__gallery
+			& > a
+				width: calc(50% - 20px)
+				padding-bottom: 37%	

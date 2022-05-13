@@ -1,0 +1,265 @@
+.mobile-menu	
+	&__bot
+		display: none
+	&__logo
+		position: absolute
+		top: 22px
+		left: 20px
+		display: none
+	&__hamburger
+		position: absolute
+		top: 17px
+		right: 5px
+		z-index: 2
+		display: none
+		margin-left: 0		
+		padding: 10px	
+		width: 45px
+		height: 38px
+
+@media only screen and (max-width : 991px)		
+
+	.navbar
+		&__socials
+			margin-left: 20px
+			margin-top: 30px
+
+	.mobile-menu	
+		&__bot
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			justify-content: flex-start
+			text-align: left
+			margin-left: 0
+			width: 280px
+			padding: 20px
+			color: $text-color	
+
+		&__logo
+			display: inline-block			
+
+		&__hamburger
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex			
+
+		&__phone
+			margin-top: 15px
+			.contacts__phones
+				.svg
+					path
+						fill: #fff
+
+		&__contact
+			margin-top: 15px
+			.contact
+				margin: 0
+				padding: 0
+				color: #fff
+				&__title
+					font-size: 14px
+				a,				
+				span
+					color: #fff
+				a
+					&:hover
+						color: $accent-color
+
+		&__btn
+			margin-top: 20px	
+
+	.overlay	
+		background-color: rgba(#040406, .95)
+		opacity: 0
+		transition: all .3s linear
+		visibility: hidden
+		position: fixed
+		top: 0
+		height: 100vh
+		left: 0
+		right: 0
+		z-index: 20
+		cursor: pointer
+		&.is-visible
+			opacity: 1
+			visibility: visible
+
+	.menu-block
+		padding: 0
+		margin: 0
+		opacity: 1
+		visibility: visible
+		position: fixed
+		top: 0
+		left: 0
+		right: auto
+		width: 280px
+		height: 100%
+		max-height: 100vh
+		z-index: 20		
+		overflow: hidden
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch	
+		display: block
+		margin-left: -100%
+		transition: margin-left .5s				
+		background-color: $bg-color
+		color: $text-color
+		padding: 70px 0 15px
+		border: none		
+		&.noscroll-y
+			overflow-y: hidden
+		&.visible
+			margin-left: 0 
+
+	.menu		
+		height: auto
+		padding: 0 
+		margin-left: 0
+		width: 100%
+		border: none
+		border-top: 1px solid rgba(#e4e4e4, .15)		
+		&__list			
+			margin: 0
+			flex-direction: column
+			align-items: flex-start		
+		&__item
+			width: 100%
+			padding: 0 
+			margin: 0
+			position: static	
+			line-height: 1
+			border-bottom: 1px solid rgba(#e4e4e4, .15)						
+			&.active,
+			&:hover
+				background-color: $bg-color-2
+				.menu__link
+					color: $accent-color					
+
+			&--sub
+				.menu__link
+					&:after						
+						transform: translateY(-50%) rotate(90deg)
+						background-image: url('../img/drop-down.svg')	
+						right: 10px	
+				&:hover,
+				&.active					
+					.menu__link						
+						&:after						
+							transform: translateY(-50%) rotate(90deg)
+							background-image: url('../img/drop-down-hover.svg')	
+			&:hover				
+				.submenu
+					opacity: 0
+					visibility: hidden
+					&.slide
+						opacity: 1
+						visibility: visible		
+
+		&__link
+			width: 100%
+			line-height: 1.2			
+			white-space: normal
+			transition: color .2s				
+			height: auto
+			padding: 15px 40px 15px 20px
+			transition: background-color .2s, color .2s 	
+			&:after				
+				transform: rotate(-90deg)			
+				right: 15px	
+					
+		&__back			
+			cursor: pointer
+			display: inline-block				
+			user-select: none					
+			position: absolute
+			text-indent: -9999px
+			top: 25px
+			right: 16px
+			width: 20px
+			height: 20px
+			background-image: url('../img/go-back.svg')
+			background-size: 20px
+			background-position: center
+			background-repeat: no-repeat
+			
+		&__title
+			display: block			
+			line-height: 1.2
+			transition: color .2s
+			font-size: 20px
+			border-top: 1px solid rgba(#e4e4e4, .15)					
+			border-bottom: 1px solid rgba(#e4e4e4, .15)	
+			width: 100%
+			color: #fff
+			padding: 15px 20px
+			+bold
+			&:hover,
+			&.active
+				background-color: $bg-color-2
+				color: $accent-color	
+
+	.submenu
+		transition: transform .2s linear, opacity .2s linear, visibility .2s linear		
+		border: none
+		position: fixed
+		margin: 0
+		padding: 0
+		top: 0
+		left: 0
+		height: 100%
+		max-height: 100vh
+		transform: translateX(100%)
+		min-width: auto
+		width: 280px
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch			
+		padding: 0		
+		cursor: default		
+		box-shadow: none
+		padding-top: 70px		
+		border-radius: 0		
+		opacity: 0
+		visibility: hidden
+		background-color: $bg-color			
+		&.slide
+			transform: translateX(0)
+			opacity: 1
+			visibility: visible	
+			z-index: 2
+		&__item			
+			height: auto			
+			border-bottom: 1px solid rgba(#e4e4e4, .15)				
+			&:nth-child(1)
+				border-top: 1px solid rgba(#e4e4e4, .15)					
+			&:hover,
+			&.active
+				background-color: $bg-color-2
+				.submenu__link
+					color: $accent-color
+			& > ul
+				padding-left: 30px		
+				margin-top: 0
+				li
+					width: 100%
+					a
+						width: 100%		
+						font-size: 16px				
+
+		&__link
+			color: #fff
+			font-size: 18px
+			padding: 15px 20px
+			line-height: 1.2
+			width: 100%			
+			+light
+
+
+		

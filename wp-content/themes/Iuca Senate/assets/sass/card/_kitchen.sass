@@ -1,0 +1,245 @@
+.kitchens
+	&-wrap
+		position: relative
+		margin-top: 32px
+	&__slider-arrows
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		margin-top: -15px
+		left: -65px
+		right: -65px
+		display: none
+		&.is-visible
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		margin: 0 -15px -30px
+		&.is-slider
+			z-index: 3
+
+.kitchen
+	display: inline-block
+	width: 570px
+	margin: 0 15px 30px
+	background-color: #1C1D24
+	padding-top: 375px
+	position: relative
+	&__foto
+		width: 100%
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 375px
+		img
+			@extend .object-fit
+	&__labels
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		position: absolute
+		z-index: 2
+		top: 20px
+		left: 20px
+		max-width: calc(100% - 40px)
+	&__label
+		height: 30px
+		line-height: 34px
+		background-color: $accent-color
+		font-size: 13px
+		+bold
+		letter-spacing: 0.075em
+		text-align: center
+		padding: 0 15px
+		text-transform: uppercase
+		color: #fff
+		white-space: nowrap
+		&--credit
+			background-color: #fff
+			color: $bg-color
+	&__foot
+		text-align: center
+		display: block
+		width: 100%
+		padding: 30px 30px 35px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: flex-start
+		height: 100%
+	&__title
+		color: #fff
+		font-size: 24px
+		padding: 0 10px
+		position: relative
+		line-height: 1.1
+		transition: color .2s
+		margin-bottom: 20px
+		&:before,
+		&:after
+			border: 1px solid #fff
+			position: absolute
+			content: ''
+			display: inline-block
+			width: 8px
+			top: -9px
+			bottom: -9px
+			transition: border-color .2s
+		&:before
+			left: -13px
+			border-right: none
+		&:after
+			right: -13px
+			border-left: none
+		&:hover
+			border-color: #fff
+			color: #fff
+	&__price
+		margin-top: auto
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		width: 100%
+	&__old-price
+		line-height: 1
+		white-space: nowrap
+		display: block
+		text-decoration: line-through
+		margin-bottom: 6px
+	&__new-price
+		color: #fff
+		line-height: 1
+		white-space: nowrap
+		display: block
+		font-size: 18px
+		margin-top: auto
+	&:hover
+		.kitchen
+			&__title
+				color: $accent-color
+				&:after,
+				&:before
+					border-color: $accent-color
+
+.pop-kitchens
+	.kitchens-wrap
+		margin-top: 40px
+
+@media only screen and (max-width : 1349px)	
+
+	.kitchens
+		&__slider-arrows
+			left: 0
+			right: 0
+		&-block
+			&.is-slider
+				margin-left: 30px
+				margin-right: 30px
+				.kitchen
+					padding-top: 345px
+					&__foto
+						height: 345px
+
+	.kitchen
+		width: 445px
+
+@media only screen and (max-width : 1199px)	
+
+	.kitchens
+		&-block
+			&.is-slider
+				.kitchen
+					padding-top: 275px
+					&__foto
+						height: 275px
+
+	.kitchen
+		width: 465px
+		padding-top: 305px
+		&__foto
+			height: 305px
+
+@media only screen and (max-width : 991px)	
+
+	.kitchens
+		&-block
+			margin-left: -10px
+			margin-right: -10px
+			margin-bottom: -20px
+			&.is-slider
+				.kitchen
+					padding-top: 205px
+					&__foto
+						height: 205px
+
+	.kitchen
+		width: 350px
+		padding-top: 230px
+		margin: 0 10px 20px
+		&__foot
+			padding-bottom: 30px
+		&__foto
+			height: 230px
+		&__labels
+			top: 10px
+			left: 10px
+		&__label
+			font-size: 11px
+			height: 20px
+			line-height: 22px
+			padding: 0 10px
+		&__title
+			font-size: 20px
+
+@media only screen and (max-width : 767px)	
+
+	.kitchens
+		&-block
+			&.is-slider
+				.kitchen
+					padding-top: 145px
+					&__foto
+						height: 145px
+
+	.kitchen
+		width: 260px
+		padding-top: 170px
+		&__foto
+			height: 170px		
+		&__title
+			width: 100%
+
+@media only screen and (max-width : 575px)	
+
+	.kitchens
+		&__slider-arrows
+			display: none!important
+		&-block
+			&.is-slider
+				margin-left: -20px
+				margin-right: -20px
+
+	.kitchen
+		margin: 0 10px
+		width: 100%

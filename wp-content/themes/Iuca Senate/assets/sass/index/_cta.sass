@@ -1,0 +1,101 @@
+.cta
+	&-block
+		border: 3px solid $accent-color		
+		padding: 80px 80px 77px
+		padding-right: 40%			
+		position: relative
+	&__bg
+		width: 590px
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: top right
+		z-index: -1
+		&:after
+			position: absolute
+			content: ''
+			display: block
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: linear-gradient(90deg, #16171D 0%, rgba(22, 23, 29, 0) 100%)
+	&__form
+		width: 540px
+		margin-top: 70px
+		.form
+			width: 100%
+			.custom-checkbox
+				margin-top: 30px
+			.form-row
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: center
+
+@media only screen and (max-width : 1199px)	
+
+	.cta
+		&-block
+			padding-right: 40%
+		&__bg
+			width: 50%
+		&__form
+			margin-top: 40px
+			.form
+				.custom-checkbox
+					margin-top: 20px
+		.section-title
+			font-size: 30px
+
+@media only screen and (max-width : 991px)	
+
+	.cta
+		&-block
+			padding-right: 20%
+
+@media only screen and (max-width : 767px)	
+
+	.cta
+		&-block
+			padding: 40px
+		&__bg
+			display: none
+		&__form
+			width: 100%
+
+@media only screen and (max-width : 575px)	
+
+	.cta
+		&-block
+			padding: 40px 30px
+		.section-title
+			font-size: 24px
+		&__form
+			margin-top: 30px
+			.form
+				&-row
+					flex-direction: column
+					.input-wrapper
+						margin-bottom: 15px
+
+@media only screen and (max-width : 399px)
+
+	.cta		
+		&__form
+			.form						
+				.submit-wrapper					
+					width: 100%
+					input[type=submit]
+						width: 100%
+
+@media only screen and (max-width : 359px)
+
+	.cta		
+		&-block
+			padding: 30px 20px

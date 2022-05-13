@@ -1,0 +1,76 @@
+.case
+	&-review
+		background-color: #1C1D24
+		&-block
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: flex-start
+			margin-top: 34px
+			img,
+			a
+				flex-shrink: 0
+				margin-left: 60px
+				display: inline-block
+				width: 180px
+				height: 180px
+				overflow: hidden
+				border-radius: 50%
+				line-height: 1
+				img
+					margin-left: 0
+					object-fit: cover
+		&__info
+			width: 100%
+		&__text
+			blockquote
+				background-color: transparent
+				border: none
+				padding: 0
+				padding-left: 95px
+				margin: 0
+				background-position: top 5px left
+		&__author
+			font-size: 20px
+			color: #fff
+			margin-left: 95px
+			margin-top: 20px
+			line-height: 1.2
+
+@media only screen and (max-width : 991px)
+
+	.case
+		&-review
+			img,
+			a
+				margin-left: 30px
+
+@media only screen and (max-width : 767px)
+
+	.case
+		&-review
+			&-block	
+				flex-direction: column				
+				img,
+				a
+					width: 120px
+					height: 120px
+					order: -1
+					margin-left: 0			
+			&__info
+				margin-top: 20px	
+
+@media only screen and (max-width : 575px)
+
+	.case
+		&-review
+			&__text
+				blockquote
+					padding-left: 0px	
+					padding-top: 60px
+					background-size: 50px auto		
+			&__author
+				margin-left: 0	
+				font-size: 18px

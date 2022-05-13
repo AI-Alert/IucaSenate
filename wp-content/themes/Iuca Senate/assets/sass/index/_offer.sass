@@ -1,0 +1,53 @@
+.offer
+	padding: 80px 0 0
+	overflow: hidden
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		& > img
+			margin-left: -70px
+			margin-right: 100px
+			flex-shrink: 0
+			max-width: 690px
+			margin-top: auto
+	.btn
+		margin-top: 30px
+		height: 45px
+		line-height: 45px
+	&__info
+		padding-bottom: 80px
+	&__text
+		margin-top: 30px
+		p
+			&:nth-child(1)
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+
+@media only screen and (max-width : 1199px)	
+
+	.offer
+		&-block
+			& > img
+				max-width: 45%
+				margin-right: 50px
+				margin-left: 0
+
+@media only screen and (max-width : 991px)	
+
+	.offer
+		padding: 80px 0 0
+		&-block
+			flex-direction: column
+			align-items: center
+			& > img
+				max-width: 100%
+				margin-right: 0px
+				margin-top: 50px
+		&__info
+			order: -1
+			padding: 0

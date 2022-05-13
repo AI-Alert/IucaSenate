@@ -1,0 +1,952 @@
+html
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px	
+	position: relative
+	line-height: 1.5
+	color: $text-color
+	+regular
+	-webkit-font-smoothing: antialiased  
+	-webkit-text-size-adjust: none
+	background-color: $bg-color
+	margin: 0	
+
+img
+	max-width: 100%
+
+b, strong
+	font-weight: normal
+
+input, textarea
+	&:required
+		box-shadow: none
+		outline: none
+	&:invalid
+		box-shadow: none
+	&:focus
+		outline: none
+	
+a
+	text-decoration: none 
+	color: $text-color
+
+	&:focus, &:hover
+		outline: none
+		text-decoration: none
+
+button:active, button:focus
+	outline: none
+
+button::-moz-focus-inner
+	border: 0
+
+ul, li
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+input, select, button
+	outline: none 
+
+input,
+textarea
+	-webkit-appearance: none
+
+input:disabled
+	opacity: 1
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+	-webkit-appearance: none
+	margin: 0
+
+input[type="number"]
+	-moz-appearance: textfield
+
+input[type="number"]:hover,
+input[type="number"]:focus 
+	-moz-appearance: number-input
+
+input[type=text]::-ms-clear,
+input[type=tel]::-ms-clear,
+input[type=email]::-ms-clear
+	display: none
+	width : 0
+	height: 0
+
+input[type=text]::-ms-reveal,
+input[type=tel]::-ms-reveal,
+input[type=email]::-ms-reveal
+	display: none
+	width : 0
+	height: 0
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+	display: none
+
+*, *:before, *:after
+	box-sizing: border-box
+
+.clearfix:before,
+.clearfix:after 
+	content: " "
+	display: table
+
+.clearfix:after
+	clear: both
+
+.slick-slide
+	outline: none 
+
+*
+	-webkit-tap-highlight-color: transparent
+
+.absolute-center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+.fill
+	position: absolute
+	content: ''
+	display: block
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+
+.object-fit
+	position: absolute
+	top: 0
+	height: 100%
+	left: 0
+	width: 100%
+	object-fit: cover
+	&.contain
+		object-fit: contain
+
+.wrap
+	overflow: hidden	
+
+.hidden
+	display: none
+
+svg
+	user-select: none		
+
+.section
+	position: relative
+	padding: 80px 0
+	&--dark
+		background-color: $bg-color-2
+	&-title		
+		font-weight: normal
+		margin: 0
+		line-height: 1.1
+		+bold
+		font-size: 40px
+		text-align: left	
+		color: #fff
+	&-h2
+		font-weight: normal
+		margin: 0
+		line-height: 1.1
+		+bold
+		font-size: 30px
+		text-align: left	
+		color: #fff
+	&-info		
+		margin-top: 20px
+		p
+			&:nth-child(1)
+				margin-top: 0		
+			&:last-child
+				margin-bottom: 0
+
+.btn
+	position: relative
+	user-select: none
+	cursor: pointer
+	text-align: center	
+	border-radius: 0
+	border: none
+	box-shadow: none	
+	height: 50px
+	line-height: 1
+	font-size: 16px		
+	+bold
+	padding: 0 20px	
+	width: 180px
+	color: #fff
+	transition: background-color .2s, color .2s, border-width .2s
+	background-color: $accent-color		
+	border: 3px solid $accent-color
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: center
+	&:hover
+		background-color: transparent	
+		color: $accent-color
+	&:active
+		background-color: transparent	
+		color: $accent-color
+		border-width: 1px
+	&--bdr
+		border: 1px solid $accent-color		
+		background-color: transparent		
+		color: $accent-color
+		&:hover
+			border-width: 3px
+		&:active
+			background-color: $accent-color
+			color: #fff		
+	&--more
+		border: 1px solid transparent
+		background-color: transparent		
+		color: $accent-color
+		height: 40px
+		line-height: 38px
+		transition: border-color .2s, border-width .2s
+		font-size: 16px
+		padding: 0 10px
+		width: 128px
+		&:before,
+		&:after
+			border: 1px solid $accent-color
+			position: absolute
+			content: ''
+			display: inline-block
+			width: 8px			
+			top: -1px
+			bottom: -1px
+		&:before
+			left: -1px
+			border-right: none
+		&:after
+			right: -1px
+			border-left: none
+		&:hover
+			border-color: $accent-color
+			color: $accent-color
+		&:active
+			border-color: $accent-color
+			border-width: 3px
+			line-height: 34px			
+			color: $accent-color
+.btns
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: center
+	.btn
+		& + .btn
+			margin-left: 30px
+
+.social	
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	width: 100%
+	&-panel
+		position: fixed
+		z-index: 20
+		top: calc(50vh - 20px)
+		left: -100px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		transform: rotate(90deg)
+	&__title
+		font-size: 16px		
+		margin-right: 20px
+		line-height: 1
+		white-space: nowrap
+	&__link
+		flex-shrink: 0				
+		display: inline-block		
+		width: 40px
+		height: 40px	
+		background-color: #040406
+		margin-right: 8px
+		transition: background-color .2s 
+		position: relative
+		transform: rotate(-90deg)
+		.svg	
+			@extend .absolute-center		
+			path				
+				transition: fill .2s
+		&:last-child
+			margin-right: 0
+		&:hover
+			background-color: #fff
+			.svg
+				path
+					fill: $bg-color
+
+.socials
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	justify-content: flex-start	
+	&__link
+		flex-shrink: 0				
+		display: inline-block		
+		width: 40px
+		height: 40px	
+		background-color: #040406
+		margin-right: 8px
+		transition: background-color .2s 
+		position: relative
+		.svg	
+			@extend .absolute-center		
+			path				
+				transition: fill .2s
+				fill: $accent-color
+		&:last-child
+			margin-right: 0
+		&:hover
+			background-color: $accent-color
+			.svg
+				path
+					fill: #fff
+
+.logo
+	line-height: 1	
+	display: inline-block		
+	img
+		width: 100%
+		height: auto
+
+.phones
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column-reverse
+	align-items: flex-start
+	a
+		font-size: 24px
+		line-height: 1
+		white-space: nowrap
+		color: $text-color
+		margin-bottom: 7px
+		transition: color .2s
+		&:nth-child(1)		
+			margin-bottom: 0
+		&:hover
+			color: $accent-color
+
+.contact
+	padding-left: 40px
+	position: relative
+	font-size: 16px
+	& > .svg
+		position: absolute
+		top: -1px
+		left: 0
+		path
+			transition: fill .2s
+	a
+		color: $text-color
+		white-space: nowrap
+		transition: color .2s
+		&:hover
+			color: $accent-color
+
+.mCS-my-theme
+	&.mCSB_scrollTools	
+		opacity: 1
+		.mCSB_dragger
+			.mCSB_dragger_bar
+				background-color: $accent-color
+				border-radius: 0
+				height: 5px
+				margin: 0
+		.mCSB_draggerRail
+			background-color: transparent
+			margin: 0
+
+		.mCSB_draggerContainer
+			background-color: $bg-color-2
+			height: 5px
+
+.slider-arrows
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center	
+	justify-content: space-between
+	position: relative
+	z-index: 2
+	height: 65px
+
+.prev,
+.forward	
+	user-select: none		
+	cursor: pointer		
+	padding: 0		
+	display: inline-block		
+	position: absolute	
+	width: 22px
+	height: 65px
+	border: none
+	background-color: transparent
+	.svg
+		width: 22px
+		height: 65px	
+		@extend .absolute-center
+		transition: opacity .2s
+		path
+			transition: stroke .2s
+	&:not(.slick-disabled):hover
+		.svg
+			path
+				stroke: $accent-color
+	&.slick-disabled
+		cursor: default
+		.svg
+			opacity: 0.3
+		
+.prev
+	left: 0	
+	transform: scale(-1,-1)	
+
+.forward
+	right: 0px	
+
+.slick-dots	
+	height: 3px
+	z-index: 2
+	li
+		display: inline-block
+		margin-right: 9px
+		line-height: 1	
+		font-size: 4px
+		&:last-child
+			margin-right: 0
+		button
+			width: 7px
+			height: 7px	
+			text-indent: -9999px
+			border-radius: none			
+			background-color: #5C6070
+			padding: 0
+			cursor: pointer		
+			transition: background-color .3s	
+			border: none				
+		&.slick-active				
+			button
+				background-color: #fff
+
+.pagination
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex	
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+	margin-bottom: -10px	
+	margin-top: 45px	
+	&__item	
+		line-height: 1	
+		margin-bottom: 10px
+		a
+			color: $text-color
+			font-size: 16px		
+			transition: color .2s, border-color .2s
+			width: 40px
+			height: 40px		
+			text-align: center
+			line-height: 40px
+			display: inline-block
+			border: 1px solid transparent
+
+		&.left,
+		&.right		
+			a						
+				position: relative
+				top: 2px
+				.svg
+					width: 16px
+					height: 16px					
+					path
+						fill: $text-color
+						transition: fill .2s		
+			&:not(.no-active):hover				
+				.svg
+					path
+						fill: $accent-color
+			&.left
+				transform: scale(-1,1)
+				margin-right: 6px
+			&.right
+				margin-left: 6px
+			&.no-active
+				a
+					cursor: default
+					opacity: 0.3
+		
+		&.active,
+		&:hover
+			a								
+				color: $accent-color
+				
+		&.active
+			a
+				cursor: default		
+				border-color: $accent-color	
+
+.breadcrumbs		
+	&-block
+		margin-top: 120px
+		margin-bottom: 15px
+		position: relative
+		z-index: 3			
+	&__list
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start			
+		line-height: 1.5
+		margin-left: -7px
+	&__item
+		padding-right: 7px
+		padding-left: 7px		
+	&__text	
+		font-size: 16px			
+	&__link			
+		white-space: nowrap			
+		font-size: 16px
+		text-decoration: none				
+		position: relative
+		text-decoration-color: transparent
+		transition: text-decoration-color .2s		
+		.svg
+			position: relative
+			top: 2px
+		&:hover
+			color: $accent-color
+			text-decoration: underline
+			text-decoration-color: $accent-color
+			.svg
+				path
+					fill: $accent-color
+		.svg
+			path
+				transition: fill .2s		
+
+*::-webkit-input-placeholder	
+	opacity: 1
+	font-size: 16px
+	color: $text-color
+	transition: color .2s
+
+*:-moz-placeholder
+	opacity: 1
+	font-size: 16px
+	color: $text-color
+	transition: color .2s
+
+*::-moz-placeholder
+	opacity: 1
+	font-size: 16px
+	color: $text-color
+	transition: color .2s
+
+*:-ms-input-placeholder
+	opacity: 1
+	font-size: 16px
+	color: $text-color
+	transition: color .2s
+
+.form	
+	span.wpcf7-list-item
+		margin: 0		
+	p
+		margin: 0	
+	.check-wrapper
+		&.field--invalid
+			input[type=checkbox]					
+				+ span				
+					border-color: #F6523A
+
+	.input-wrapper
+		width: 100%	
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			display: inline-block
+			width: 24px
+			height: 24px
+			background-repeat: no-repeat
+			background-size: contain
+			background-position: 0 0
+			top: 12px
+			left: 20px
+		&.is-name	
+			&:before
+				background-image: url('../img/input-user.svg')
+			&.focus
+				&:before
+					background-image: url('../img/input-user-focus.svg')
+		&.is-tel	
+			&:before
+				background-image: url('../img/input-phone.svg')
+			&.focus
+				&:before
+					background-image: url('../img/input-phone-focus.svg')
+		&.is-email	
+			&:before
+				background-image: url('../img/input-email.svg')
+			&.focus
+				&:before
+					background-image: url('../img/input-email-focus.svg')
+		&.is-comment		
+			&:before
+				background-image: url('../img/input-comment.svg')
+			&.focus
+				&:before
+					background-image: url('../img/input-comment-focus.svg')
+		&.is-required
+			&:after				
+				content: '*'	
+				position: absolute			
+				color: #9E9292		
+				+regular
+				top: 10px				
+				right: 10px				
+				font-size: 16px
+				line-height: 1		
+
+	input[type=text],
+	input[type=tel],
+	input[type=url],
+	input[type=email],
+	textarea
+		font-size: 16px		
+		color: #fff
+		height: 50px
+		text-align: left
+		background-color: #0B0C10	
+		border: 1px solid #000
+		width: 100%	
+		border-radius: 0
+		padding: 0 30px 0 54px
+		transition: border-color .2s, background-color .2s
+		&:focus
+			border-color: $accent-color
+			background-color: $bg-color
+		&:focus::-webkit-input-placeholder
+			color: transparent
+		&:focus:-moz-placeholder
+			color: transparent
+		&:focus::-moz-placeholder
+			color: transparent
+		&:focus:-ms-input-placeholder
+			color: transparent			
+		&.wpcf7-not-valid
+			border-color: #F6523A
+			background-color: $bg-color
+	input:-webkit-autofill,		
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active
+		-webkit-box-shadow: inset 0 0 0 100px $bg-color
+		-webkit-text-fill-color: #fff
+	textarea
+		line-height: 1.2
+		width: 100%!important	
+		height: 150px
+		resize: none
+		overflow: hidden
+		padding-top: 15px
+	.wpcf7-not-valid-tip
+		color: #F6523A
+	.custom-checkbox
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: flex-start
+		text-align: left	
+		max-width: 390px
+	input[type=checkbox]		
+		display: none
+		+ span
+			display: inline-block	
+			height: 18px
+			width: 18px
+			border-radius: 0
+			background-color: transparent
+			border: 1px solid $text-color
+			flex-shrink: 0
+			margin-right: 13px
+			cursor: pointer					
+			position: relative		
+			top: 1px			
+			&:before
+				content: ''
+				display: inline-block
+				position: absolute				
+				opacity: 0			
+				background-image: url('../img/check.svg')
+				background-repeat: no-repeat
+				background-size: 12px
+				background-position: center
+				top: 0px
+				bottom: 0px
+				left: 0px
+				right: 0px
+				transition: opacity .2s
+		&:checked
+			+ span											
+				&:before
+					opacity: 1
+	.input-check__text		
+		color: $text-color
+		a			
+			color: $text-color
+			text-decoration: underline
+			transition: color .2s
+			&:hover				
+				color: $accent-color
+	
+	.file-upload		
+		input[type=file]
+			display: inline-block
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			opacity: 0
+			visibility: hidden		
+		&__btn
+			width: 210px
+			padding-left: 20px
+			.svg
+				width: 24px
+				height: 24px
+				margin-right: 10px
+				flex-shrink: 0
+				path
+					transition: fill .2s
+			&:active
+				.svg
+					path
+						fill: #fff
+	
+.up
+	width: 50px
+	height: 50px		
+	display: inline-block
+	cursor: pointer	
+	transition: margin-bottom .4s, background-color .2s
+	position: fixed
+	z-index: 19
+	right: 30px
+	bottom: 30px
+	margin-bottom: -100px
+	padding: 0	
+	background-color: #1C1D24
+	border: none
+	box-shadow: none
+	.svg
+		width: 15px
+		height: 15px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%) rotate(-90deg)
+		path
+			transition: fill .2s
+	&.is-visible
+		margin-bottom: 0
+	&:hover		
+		background-color: $text-color
+		.svg
+			path
+				fill: #fff
+	
+a[href$='.jpeg'],
+a[href$='.jpg'],
+a[href$='.png'],
+a[href$='.webp']
+	position: relative
+	display: inline-block
+	line-height: 0
+	overflow: hidden
+
+.min
+	&-cta
+		border: 3px solid $accent-color
+		text-align: center		
+		padding: 40px 30px
+		.section-h2
+			text-align: center
+		.btn
+			display: inline-block
+			margin-top: 25px
+		&__text
+			font-size: 20px
+			margin-top: 15px
+			p
+				&:nth-child(1)
+					margin-top: 0
+				&:last-child
+					margin-bottom: 0
+
+@media only screen and (max-width : 1399px)	
+
+	.social
+		&-panel
+			left: -120px
+
+@media only screen and (max-width : 1279px)		
+
+	.social
+		&-panel
+			display: none			
+
+@media only screen and (max-width : 1199px)	
+
+	.up
+		right: 20px
+		bottom: 20px	
+
+	.min-cta
+		&__text
+			font-size: 18px	
+
+@media only screen and (max-width : 991px)	
+
+	body
+		&.noscroll
+			overflow: hidden
+
+	.breadcrumbs
+		&-block
+			margin-top: 100px	
+	
+@media only screen and (min-width : 992px)	
+
+	.up
+		&.is-visible
+			&.open-popup
+				right: 47px	
+
+	a[href$='.jpeg'],
+	a[href$='.jpg'],
+	a[href$='.png'],
+	a[href$='.webp']
+		&:before
+			position: absolute
+			content: ''
+			display: block
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			width: 60px
+			height: 60px
+			border-radius: 50%
+			background-color: $bg-color
+			background-image: url('../img/zoom.svg')
+			background-repeat: no-repeat
+			background-position: center	
+			background-size: 24px
+			opacity: 0
+			transition: opacity .2s	
+			z-index: 2
+		&:after
+			position: absolute
+			content: ''
+			display: block
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background-color: rgba(#040406, .4)
+			opacity: 0
+			transition: opacity .2s	
+		&:hover
+			&:before,
+			&:after
+				opacity: 1	
+
+	.slick-dots
+		li
+			&:hover
+				button
+					background-color: #fff
+
+@media only screen and (max-width : 575px)		
+
+	body
+		font-size: 14px	
+
+	.section
+		&-title
+			font-size: 30px		
+		&-h2
+			font-size: 24px
+			
+	.breadcrumbs
+		&-block
+			margin-top: 85px
+		&__text
+			font-size: 14px
+		&__link			
+			font-size: 14px
+			.svg
+				width: 18px
+				top: 0px
+
+	.pagination
+		margin-top: 30px
+
+	.min
+		&-cta
+			&__text
+				font-size: 16px
+
+@media only screen and (max-width : 479px)		
+
+	.btns
+		.btn			
+			width: calc(50% - 5px)	
+			& + .btn
+				margin-left: 10px

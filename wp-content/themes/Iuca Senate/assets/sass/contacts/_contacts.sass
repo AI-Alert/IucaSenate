@@ -1,0 +1,186 @@
+.contacts
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	margin-top: 32px
+	padding-bottom: 60px
+	position: relative
+	z-index: 2
+	&__item
+		width: 270px
+		padding-right: 30px
+		&:last-child
+			padding-right: 0
+	&__socials
+		margin-top: 30px
+
+	.contact
+		color: #fff
+		&__title
+			font-size: 16px
+			+bold
+			line-height: 1.2
+			display: block
+			margin-bottom: 13px
+	&__phones
+		position: relative
+		padding-left: 40px
+		a
+			color: #fff
+		.svg
+			position: absolute
+			top: -1px
+			left: 0
+
+	&__photo
+		display: inline-block
+		width: 100%
+		height: 220px
+		position: relative
+		margin-top: 30px
+		& > img
+			@extend .object-fit
+
+.map
+	height: 660px
+	margin-top: -175px
+
+.map-popup
+	color: $bg-color
+	text-align: center
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	text-align: left
+	width: 335px	
+	font-size: 16px
+	line-height: 1.5
+
+ymaps[class*="balloon"]	
+	background-color: transparent
+	box-shadow: none
+
+ymaps[class*="balloon__close"]		
+	background-color: transparent
+	box-shadow: none
+	border: 0
+
+ymaps[class*="balloon__close-button"]
+	background-image: url('../img/close.svg')!important
+	background-size: 9px!important	
+	opacity: 1!important
+	top: 5px
+	right: 5px
+	position: relative
+	width: 15px
+	height: 15px
+	background-color: transparent
+	box-shadow: none
+	display: none
+	 
+ymaps[class*="balloon__layout"]
+	background-color: #fff!important				
+	border: none
+	width: 375px	
+	box-shadow: none
+	border: 1px solid #dadada
+
+ymaps[class*="balloon__layout"]:after
+	position: absolute
+	bottom: 0px
+	z-index: 2
+	height: 5px
+	left: 0
+	right: 0
+	background-color: #fff!important	
+	content: ''
+	display: block	
+
+ymaps[class*="balloon__content"]
+	margin-right: 0!important
+	padding: 8px 20px 4px!important		
+
+ymaps[class*="balloon__tail"]
+	margin-left: 0px!important
+	background-color: #fff!important	
+	background-image: none!important
+	box-shadow: none
+	width: 10px
+	height: 10px
+	display: none
+
+@media only screen and (max-width : 1199px)	
+
+	.contacts
+		&__item
+			width: auto
+		&__photo
+			height: 180px
+
+	.map
+		margin-top: -160px
+		height: 400px
+
+@media only screen and (max-width : 991px)	
+
+	.contacts
+		flex-wrap: wrap
+		margin-bottom: -120px
+		padding-bottom: 0
+		&__socials
+			margin-top: 10px
+		&__item
+			width: 50%
+			margin-bottom: 30px
+			&:nth-child(2)
+				padding-right: 0
+		&__photo
+			width: 270px
+			height: 220px
+
+	.map
+		margin-top: 40px
+
+@media only screen and (max-width : 575px)	
+
+	.contacts		
+		margin-bottom: -30px
+		&__phones
+			a
+				font-size: 22px
+		.contact
+			font-size: 14px
+			padding-left: 35px
+			&__title
+				margin-bottom: 10px
+			.svg
+				top: -2px
+		&__item
+			&:nth-child(1),
+			&:nth-child(4)
+				width: 100%
+				br
+					display: none
+
+	.map-popup
+		width: 235px	
+		font-size: 12px
+		 
+	ymaps[class*="balloon__layout"]
+		width: 275px	
+
+@media only screen and (max-width : 374px)
+
+	.contacts
+		&__item
+			width: 100%
+		&__photo
+			width: 100%
+			height: 0
+			padding-bottom: 80%

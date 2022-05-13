@@ -1,0 +1,142 @@
+.steps
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center	
+	&-block
+		counter-reset: item		
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: flex-start
+		margin-top: 85px
+		margin-bottom: -115px
+
+.step
+	display: inline-block
+	position: relative	
+	width: 33.33%
+	padding-right: 30px
+	margin-bottom: 115px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-end
+	justify-content: flex-start
+	position: relative
+	padding-left: 115px
+	min-height: 140px
+	.btn
+		bottom: -75px
+		position: absolute
+		left: 115px
+	&:nth-child(2),
+	&:nth-child(5),
+	&:nth-child(8)
+		margin-top: 45px
+	&:nth-child(3),
+	&:nth-child(6),
+	&:nth-child(9)
+		margin-top: 90px
+	&:before
+		content: counter(item)
+		counter-increment: item		
+		font-size: 190px
+		color: #2A2C35		
+		line-height: 1		
+		+extralight
+		margin-right: 16px
+		position: relative
+		bottom: -40px
+		position: absolute
+		right: calc(100% - 115px)
+	&__title
+		color: #fff
+		+bold
+		font-size: 20px
+		line-height: 1.2
+	&__text
+		margin-top: 10px
+		p
+			&:nth-child(1)
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+
+@media only screen and (max-width : 1199px)	
+
+	.steps
+		&-block
+			margin-bottom: -90px
+
+	.step
+		margin-bottom: 90px
+
+@media only screen and (max-width : 991px)		
+
+	.step
+		width: 50%
+		&:nth-child(2),
+		&:nth-child(5),
+		&:nth-child(8)
+			margin-top: 0
+		&:nth-child(3),
+		&:nth-child(6),
+		&:nth-child(9)
+			margin-top: 0
+		&:nth-child(2n)
+			margin-top: 60px
+
+@media only screen and (max-width : 767px)
+
+	.steps
+		&-block
+			margin-bottom: -60px
+			margin-top: 50px
+
+	.step
+		padding-left: 0
+		padding-top: 140px
+		margin-bottom: 60px
+		min-height: auto
+		&:before
+			right: auto
+			left: 0
+			top: 0
+			bottom: auto
+			font-size: 150px
+		.btn
+			position: relative
+			bottom: auto
+			left: auto
+			margin-top: 30px
+
+@media only screen and (max-width : 575px)
+
+	.steps
+		background-image: none!important
+
+	.step
+		&__title
+			font-size: 18px
+		.btn
+			width: 100%
+			padding: 0 10px
+
+@media only screen and (max-width : 374px)
+
+	.steps-block
+		margin-bottom: -30px
+	
+	.step
+		width: 100%
+		margin-bottom: 30px
+		margin-top: 0!important
+		.btn
+			width: 180px
+			margin-top: 20px

@@ -1,0 +1,250 @@
+.category-hero	
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		padding-top: 30px
+		& > img
+			flex-shrink: 0
+			max-width: 240px
+			height: auto
+			margin-right: 60px
+	&__text
+		p
+			&:nth-child(1)
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+
+.categories
+	margin: 60px 0
+	&-block
+		margin: 0px -15px -30px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+
+.category
+	display: inline-block
+	margin: 0 15px 30px
+	width: calc(50% - 30px)
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	background-color: #1C1D24
+	min-height: 220px
+	&__foto
+		width: 50%
+		position: relative
+		flex-shrink: 0
+		overflow: hidden
+		img
+			@extend .object-fit
+	&__info
+		padding: 25px
+		display: block
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			display: inline-block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 15px 19px 15px 0
+			border-color: transparent #1C1D24 transparent transparent
+			left: -19px
+			top: 22px
+	&__title
+		font-size: 18px
+		color: #fff
+		line-height: 1.33
+		display: block
+	&__text
+		display: block
+		margin-top: 20px
+
+.categories-kitchens
+	margin: 80px 0
+
+.kitchens
+	&-grid
+		margin-bottom: -30px
+		margin-left: -15px
+		margin-right: -15px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: flex-start
+		flex-wrap: wrap
+		.kitchen
+			width: calc(33.33% - 30px)
+			padding-top: 270px
+			&__foto
+				height: 270px
+			&__labels
+				top: 15px
+				left: 15px
+			&__foot
+				padding-bottom: 21px
+			&__title
+				font-size: 20px
+				margin-bottom: 25px
+
+@media only screen and (max-width : 1199px)	
+
+	.category
+		&-hero
+			&-block
+				& > img
+					margin-right: 40px
+
+	.kitchens
+		&-grid
+			.kitchen
+				padding-top: 220px
+				&__foto
+					height: 220px
+
+@media only screen and (max-width : 991px)	
+
+	.category
+		flex-direction: column
+		position: relative
+		padding-top: 265px
+		&__foto
+			width: 100%
+			height: 265px
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+		&__info
+			&:before
+				left: 25px
+				top: -24px
+				transform: rotate(90deg)
+
+		&-hero
+			&-block
+				flex-direction: column
+				& > img
+					margin-right: 0
+					margin-bottom: 30px
+
+	.kitchens
+		&-grid
+			.kitchen
+				width: calc(50% - 30px)
+				padding-top: 250px
+				margin: 0 15px 30px
+				&__foto
+					height: 250px
+
+@media only screen and (max-width : 767px)	
+
+	.categories
+		&-block
+			margin: 0 -10px -20px
+
+	.category
+		width: calc(50% - 20px)
+		margin: 0 10px 20px
+		padding-top: 200px
+		&__foto
+			height: 200px
+
+	.kitchens
+		&-grid
+			margin-bottom: -20px
+			margin-left: -10px
+			margin-right: -10px
+			.kitchen
+				width: calc(50% - 20px)
+				padding-top: 190px
+				margin: 0 10px 20px
+				&__foto
+					height: 190px
+
+@media only screen and (max-width : 575px)	
+
+	.category
+		padding-top: 160px
+		&__title
+			font-size: 16px
+		&__info
+			padding-left: 20px
+			padding-right: 20px
+			&:before
+				border-width: 10px 14px 10px 0
+				top: -17px
+				left: 20px
+		&__foto
+			height: 160px
+		&__text
+			margin-top: 15px
+
+	.kitchens
+		&-grid
+			.kitchen				
+				padding-top: 150px
+				&__foto
+					height: 150px
+				&__title
+					font-size: 16px
+				&__new-price
+					font-size: 16px
+				&__labels
+					top: 10px
+					left: 10px
+
+@media only screen and (max-width : 479px)	
+
+	.category
+		padding-top: 120px
+		&__foto
+			height: 120px
+
+	.kitchens
+		&-grid
+			.kitchen				
+				padding-top: 115px
+				&__foto
+					height: 115px
+
+@media only screen and (max-width : 374px)	
+
+	.categories
+		&-block
+			margin: 0 0 -20px
+
+	.category
+		width: 100%
+		margin: 0 0 20px
+		padding-top: 215px
+		&__foto
+			height: 215px
+
+	.kitchens
+		&-grid
+			margin-left: 0
+			margin-right: 0
+			.kitchen				
+				margin-left: 0
+				margin-right: 0
+				width: 100%
+				padding-top: 200px
+				&__foto
+					height: 200px
